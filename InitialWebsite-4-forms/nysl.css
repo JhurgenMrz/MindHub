@@ -188,6 +188,76 @@ body{
 .gameInfo-table{
     width: 100%;
 }
+.gameInfo-table th, td {
+    border-bottom: 2px solid #ddd;
+}
+.gameInfo-table tr:hover{
+    background: #f5f5f5;
+}
 .gameInfo-table tr td{
     margin-bottom: 20px;
+
+}
+
+
+.gameInfo-details{
+    margin-top: 20px;
+}
+
+.registrationForm{
+    margin: 20px 0px;
+    border: 1px solid grey;
+    padding: 20px;
+    border-radius: 10px;
+}
+.registrationForm h3{
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+.registrationForm h4{
+    text-align: center;
+    margin-top: 10px;
+}
+.registrationForm form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
+.registrationForm form label,input,select{
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.registrationForm form>input{
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+.uniform{
+    display: flex;
+    flex: 3;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+
+.radio input[type='radio']{
+    margin-left: 15px;
+    margin-right: 5px;
+    background-color: #000;
+    height: 15px;
+    width: 15px;
+    margin-bottom: 0;
+    position: relative;
+}
+
+.registrationForm form button{
+    background-color: rgb(50, 104, 255);
+    padding: 10px;
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 18px;
 }

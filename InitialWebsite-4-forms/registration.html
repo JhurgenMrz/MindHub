@@ -48,44 +48,54 @@
 
                     <div class="main-content">
                         
-                        <h3>Registration Form</h3>
                         <div class="registrationForm">
+                        <h3>Registration Form</h3>
                             <form action="show_data.html" method="GET">
                                 <label for="">Player’s First Name:</label>
-                                <input name="first_name" type="text" placeholder="First Name">
+                                <input name="first_name" type="text" placeholder="First Name" required>
                                 <br>
                                 <label for="">Player's Last Name</label>
-                                <input name="last_name" type="text" placeholder="Last Name">
+                                <input name="last_name" type="text" placeholder="Last Name" required>
                                 <br>
                                 <label for="">Street Address</label>
-                                <input name="street_address" type="text" placeholder="Street Adrees">
+                                <input name="street_address" type="text" placeholder="Street Adrees" required>
                                 <br>
                                 <label for="">City</label>
-                                <input name="city" type="text" placeholder="City">
+                                <input name="city" type="text" placeholder="City" required>
                                 <br>
-                                <label for="">Birth Date</label>
-                                <input name="birth_date" type="date" placeholder="mm/dd/yyyy">
+                                <label for="">Birth Date:</label>
+                                <input name="birth_date" type="date" placeholder="mm/dd/yyyy" required>
                                 <br>
                                 <label for="">Parent/Guardian</label>
-                                <input name="parent_guardian" placeholder="Parent/Guardian" type="text">
+                                <input name="parent_guardian" placeholder="Parent/Guardian" type="text" required>
                                 <br>
-                                <select name="school" multiple id="">
-                                    <option value="aj_katzenmaier">AJ Katzenmaier</option>
-                                    <option value="greenbay">Greenbay</option>
-                                </select>
+                                    <label for="">Which elementary school do you live near? </label> <br>
+                                    <select name="school" multiple id="" required>
+                                        <option value="aj_katzenmaier">AJ Katzenmaier</option>
+                                        <option value="greenbay">Greenbay</option>
+                                        <option value="howard_a_yeager">Howard A Yeager</option>
+                                        <option value="marjorie_p_hart">Marjorie P Hart</option>
+                                        <option value="north_elementary">North Elementary</option>
+                                        <option value="south_elementary">South Elementary</option>
+                                    </select>
+                                
                                 <br>
-
-                                <label for="">Gender</label>
-                                <input type="radio" name="gender" value="female">Female
-                                <input type="radio" name="gender" value="male">Male
+                                <div class="gender radio" >
+                                    <label for="">Gender</label>
+                                    <input type="radio" name="gender" value="female" >Female
+                                    <input type="radio" name="gender" value="male">Male
+                                
+                                </div>
                                 <br>
-                                <label for="">Grade:</label> <br>
-                                <input type="radio" name="grade" value="pre_school">Pre-School
-                                <input type="radio" name="grade" value="1st">1st
-                                <input type="radio" name="grade" value="2nd">2nd
-                                <input type="radio" name="grade" value="3rd">3rd
-                                <input type="radio" name="grade" value="4th">4th
-                                <input type="radio" name="grade" value="5th">5th
+                                <div class="grade radio">
+                                    <label for="">Grade:</label>
+                                    <input type="radio" name="grade" value="pre_school">Pre-School
+                                    <input type="radio" name="grade" value="1st">1st
+                                    <input type="radio" name="grade" value="2nd">2nd
+                                    <input type="radio" name="grade" value="3rd">3rd
+                                    <input type="radio" name="grade" value="4th">4th
+                                    <input type="radio" name="grade" value="5th">5th
+                                </div>
                                 <br>
                                 <label for="">What position(s) do you normally play? (check all that apply)</label>
                                 <select name="positions" id="" multiple>
@@ -94,15 +104,20 @@
                                     <option value="defense">Defense</option>
                                     <option value="goalkeeper">Goalkeeper</option>
                                 </select>
+                                <br>
                                 <label for="">Uniform Size:</label>
-                                <input type="radio" name="uniform_size" value="Youth Smal" >
-                                <input type="radio" name="uniform_size" value="Youth Medium" >
-                                <input type="radio" name="uniform_size" value="" >
-                                <input type="radio" name="uniform_size" value="" >
-                                <input type="radio" name="uniform_size" value="" >
-                                <input type="radio" name="uniform_size" value="" >
-                                <input type="radio" name="uniform_size" value="" >
 
+                                <div class="uniform radio">
+                                    
+                                    <input type="radio" name="uniform_size" value="youth_smal" >Youth Smal
+                                    <input type="radio" name="uniform_size" value="youth_medium">Youth Smal
+                                    <input type="radio" name="uniform_size" value="youth_large" >Youth Large
+                                    <input type="radio" name="uniform_size" value="small">Small
+                                    <input type="radio" name="uniform_size" value="medium">Medium
+                                    <input type="radio" name="uniform_size" value="large">Large
+                                    <input type="radio" name="uniform_size" value=" extra-large">Extra-Large
+
+                                </div>
                                 <h4>Permission to Play</h4><br>
                                 <p>
                                         I, the parent or guardian of the minor registrant, agree that the registrant and I will abide by all the rules of
@@ -111,8 +126,8 @@
                                         I hereby release, discharge, and/or otherwise indemnify NYSL, their employees and associated personnel
                                         and volunteers,including the facilities used for practices and games, against any claim by or on behalf of
                                         the registrant as a result of the registrant’s participation in the programand/orbeing transported to or from
-                                        NYSL sponsored activities,which transportation
-                                        By signing below, I herebyagree andauthorizethe above.In addition, by signing below, Ialso acknowledge
+                                        NYSL sponsored activities,which transportation <br>
+                                        By entering your name below, I herebyagree andauthorizethe above.In addition, by signing below, Ialso acknowledge
                                         that I have read the cancellation policy and agree to its terms.
                                 </p>
 
