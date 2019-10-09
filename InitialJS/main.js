@@ -149,7 +149,6 @@ if(age<ignasiAge){
 
 
     // Javascript String Functions
-    
     //Exercise 1
     let numbers = 1234567890
     function ReverseNumber(variable){
