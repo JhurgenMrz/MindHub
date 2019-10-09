@@ -1,4 +1,4 @@
-{
+var dataCongress = {
     "status":"OK",
     "copyright":" Copyright (c) 2019 Pro Publica Inc. All Rights Reserved.",
     "results":[
@@ -1418,7 +1418,7 @@
                   "geoid": "6698"
                   ,"missed_votes_pct": 0.00,
                   "votes_with_party_pct": 0.00,
-                  "votes_against_party_pct": 
+                  "votes_against_party_pct": 0
                 },
                             {
                   "id": "B001255",
@@ -3063,7 +3063,7 @@
                   "geoid": "7898"
                   ,"missed_votes_pct": 0.00,
                   "votes_with_party_pct": 0.00,
-                  "votes_against_party_pct": 
+                  "votes_against_party_pct": 0
                 },
                             {
                   "id": "C001080",
@@ -5883,7 +5883,7 @@
                   "geoid": "6098"
                   ,"missed_votes_pct": 0.00,
                   "votes_with_party_pct": 0.00,
-                  "votes_against_party_pct": 
+                  "votes_against_party_pct": 0
                 },
                             {
                   "id": "F000460",
@@ -14014,7 +14014,7 @@
                   "geoid": "1198"
                   ,"missed_votes_pct": 0.00,
                   "votes_with_party_pct": 0.00,
-                  "votes_against_party_pct": 
+                  "votes_against_party_pct": 0
                 },
                             {
                   "id": "N000185",
@@ -15001,7 +15001,7 @@
                   "geoid": "7298"
                   ,"missed_votes_pct": 0.00,
                   "votes_with_party_pct": 0.00,
-                  "votes_against_party_pct": 
+                  "votes_against_party_pct": 0
                 },
                             {
                   "id": "P000597",
@@ -16975,7 +16975,7 @@
                   "geoid": "6998"
                   ,"missed_votes_pct": 0.00,
                   "votes_with_party_pct": 0.00,
-                  "votes_against_party_pct": 
+                  "votes_against_party_pct": 0
                 },
                             {
                   "id": "S000018",
@@ -21164,4 +21164,3 @@
        }
     ]
  }
- 
