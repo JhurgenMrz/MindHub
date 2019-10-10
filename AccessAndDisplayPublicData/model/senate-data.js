@@ -5,12 +5,12 @@ function renderData(data){
     let header = `
         <thead>
             <tr class="text-center">
-                <th>Number</th>
-                <th>Senator</th>
+                <th>Members</th>
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
                 <th>Party</th>
-                <th>State</th>
-                <th>Years in Office</th>
-                <th> % Votes w/ Party</th>
+                <th> Total Votes </th>
             </tr>
         </thead>
     `
@@ -23,12 +23,12 @@ function renderData(data){
 
         return (
             `<tr class="text-center">
-                <td>#${index+1}</td>
-                <td> <a href=${members.url}>${members.last_name} ${members.first_name} ${members.middle_name}</a> </td> 
-                <td> ${members.party} </td> 
-                <td> ${members.state} </td>
-                <td> ${members.seniority} </td>
-                <td> ${members.votes_with_party_pct} </td>
+                <td> #${index+1}</td>
+                <td> <a href=${members.url}>${members.first_name}</a> </td> 
+                <td> <a href=${members.url}>${members.middle_name}</a> </td> 
+                <td> <a href=${members.url}>${members.last_name}</a> </td> 
+                <td> ${members.party}</td>
+                <td> ${members.total_votes} </td> 
             </tr>`
         )
     }).join(''))

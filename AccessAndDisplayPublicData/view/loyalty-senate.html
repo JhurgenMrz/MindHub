@@ -11,7 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <script src="./senate-113.js"></script>
+  <script src="./congress-113.js"></script>
   
     <div class="container">
 
@@ -29,29 +29,37 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav md-auto">
             <li class="navbar-item">
-              <a class="nav-link text-monospace" href="./home.html">Home</a>
+              <a class="nav-link" href="./home.html">Home</a>
             </li>
-            <li class="navbar-item active dropdown">
-              <a class="nav-link dropdown-toggle text-primary " id="navBarDropdown" role="button" data-toggle="dropdown" href="#">Congress 113</a>
+            <li class="navbar-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navBarDropdown" role="button" data-toggle="dropdown" href="#">Congress 113</a>
               <div class="dropdown-menu" aria-labelledby="navBarDropdown">
                 <a class="dropdown-item" href="./house-data.html">House</a>
                 <div class="dropdown-devider"></div>
                 <a class="dropdown-item" href="./senate-data.html">Senate</a>
               </div>
             </li>
-          </ul>
-        </div>
+            <li class="navbar-item dropdown ">
+              <a class="nav-link dropdown-toggle" id="navBarDropdownAttendance" role="button" data-toggle="dropdown" href="#">Attendance</a>
+              <div class="dropdown-menu" aria-labelledby="navBarDropdownAttendance">
+                <a class="dropdown-item" href="./attendance-house.html">House</a>
+                <div class="dropdown-devider"></div>
+                <a class="dropdown-item" href="./attendance-senate.html">Senate</a>
+              </div>
+            </li>
+            <li class="navbar-item dropdown active">
+              <a class="text-primary nav-link dropdown-toggle" id="navBarDropdownLoyalty" role="button" data-toggle="dropdown" href="#">Party Loyalty</a>
+              <div class="dropdown-menu" aria-labelledby="navBarDropdownLoyalty">
+                <a class="dropdown-item" href="./loyalty-house.html">House</a>
+                <div class="dropdown-devider"></div>
+                <a class="dropdown-item" href="./loyalty-senate.html">Senate</a>
+              </div>
+            </li>
+        </ul>
+    </div>
     </nav>
+    
 
-        <div class="presentation">
-          <h1>Senators</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis nam quos illum odit. Consequuntur sint qui eveniet quas eius non corporis, nemo incidunt est, ea deserunt praesentium, vel dolorem consectetur.</p>
-        </div>
-
-
-        <table class="table table-hover" id="senate-data">
-            
-        </table>
         <footer class="card" style="background-color: #f5f5f5">
           <div class="card-body">
             <h5 class="card-title">© 2016 TGIF | All Rights Reserved</h5>
@@ -60,9 +68,6 @@
     </div>
 
     </div>
-    <script>
-    </script>    
-    <script src="./senate-data.js"></script>
 
 </body>
 </html>
