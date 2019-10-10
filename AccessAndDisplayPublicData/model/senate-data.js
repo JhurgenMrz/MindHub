@@ -42,4 +42,4 @@ function renderData(data){
     return Table
 }
 
-document.getElementById('senate-data').innerHTML = renderData(data)
+document.getElementById('senate-data').innerHTML = renderData(dataSenate)
