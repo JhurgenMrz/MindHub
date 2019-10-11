@@ -45,4 +45,8 @@ function renderTableHouse(data){
     return Table
 }
 
+<<<<<<< HEAD
 tableHouse.innerHTML = renderTableHouse(data.results[0].members)
+=======
+tableHouse.innerHTML = renderTableHouse(dataCongress.results[0].members)
+>>>>>>> 63518d0b90cc37d882e8241fad635e652604a004
