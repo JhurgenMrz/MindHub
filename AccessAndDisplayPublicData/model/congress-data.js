@@ -1,7 +1,4 @@
-console.log(data.results[0].members);
-
 const tableHouse = document.getElementById('house-data')
-console.log(tableHouse)
 
 function renderTableHouse(data){
 
@@ -16,7 +13,6 @@ function renderTableHouse(data){
             </tr>
         </thead>
     `
-
     const rows = []
     rows.push(data.map((members,index)=>{
         if(!members.middle_name){
@@ -32,7 +28,7 @@ function renderTableHouse(data){
         </tr>
         `
     }).join(''))
-    console.log(rows)
+    // console.log(rows)
 
     const Table =  `<thead class="text-center">
         ${header}    
@@ -41,12 +37,7 @@ function renderTableHouse(data){
         ${rows}
     </tbody>
     `
-
     return Table
 }
 
-<<<<<<< HEAD
 tableHouse.innerHTML = renderTableHouse(data.results[0].members)
-=======
-tableHouse.innerHTML = renderTableHouse(dataCongress.results[0].members)
->>>>>>> 63518d0b90cc37d882e8241fad635e652604a004

@@ -118,7 +118,6 @@ function votesWithParty(array, percent){
     }
     return withParty
 }
-
 statistics.most_loyalty = votesWithParty(data.results[0].members, 10)
 
 //Nenos Asistencia/Compromiso
@@ -132,9 +131,9 @@ function leastEngaged(array, percent){
         }
         return 0
     })
-    console.log(orderedMembers.length);
+    // console.log(orderedMembers.length);
     let quantityPersons = Math.round((percent * orderedMembers.length) / 100 )
-    console.log(quantityPersons);
+    // console.log(quantityPersons);
     let moreAbsent = []
     for(let i = 0; i < quantityPersons; i++){
         moreAbsent.push(orderedMembers[i])
@@ -164,10 +163,10 @@ function mostEngaged(array, percent){
 
 statistics.most_engaged = mostEngaged(data.results[0].members, 10)
 
+
 //////////////////////////////////
 //     RENDER DE LAS TABLAS     //
 //////////////////////////////////
-
 
 //Table House
 const attendanceSenate = document.getElementById('glance-house')

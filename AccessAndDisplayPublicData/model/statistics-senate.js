@@ -193,10 +193,10 @@ function renderTableAttendanceSenate(statistics){
         </thead>
     `
     const Table = `${header}
-        <tbody>
+        <tbody class="text-uppercase">
             ${renderRowSenate(statistics)}
         </tbody>
-        <tfoot>
+        <tfoot class="text-uppercase">
             <td>Total</td>
             <td>${statistics.number_total}</td>
             <td>${statistics.total_votes_with_party}</td>

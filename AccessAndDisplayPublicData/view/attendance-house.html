@@ -1,95 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Senate Data</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Senate Data</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
+
 <body>
   <script src="../model/congress-113.js"></script>
-  
-    <div class="container">
 
-      <header class="d-flex justify-content-between align-items-center">
-            <div class="logo-sm " style="background-color: #0d2949; width: 110px">
-                <img style="width: 100%; padding: 5px;" id="logo" class="" src="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-footer-sm.png" alt="">
-            </div>
-        <a href="#">Info@Gfit.net</a>
-      </header>
-    
+  <div class="container">
+    <header class="d-flex justify-content-between align-items-center">
+      <div class="logo-sm " style="background-color: #0d2949; width: 110px">
+        <img style="width: 100%; padding: 5px;" id="logo" class=""
+          src="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/white-house-logo-footer-sm.png"
+          alt="" />
+      </div>
+      <a href="#">Info@Gfit.net</a>
+    </header>
+
     <nav class="navbar navbar-expand-md navbar-light" style="background-color: #f5f5f5">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav md-auto">
-            <li class="navbar-item">
-              <a class="nav-link" href="./home.html">Home</a>
-            </li>
-            <li class="navbar-item dropdown">
-              <a class="nav-link dropdown-toggle" id="navBarDropdown" role="button" data-toggle="dropdown" href="#">Congress 113</a>
-              <div class="dropdown-menu" aria-labelledby="navBarDropdown">
-                <a class="dropdown-item" href="./house-data.html">House</a>
-                <div class="dropdown-devider"></div>
-                <a class="dropdown-item" href="./senate-data.html">Senate</a>
-              </div>
-            </li>
-            <li class="navbar-item dropdown active">
-              <a class="text-primary  nav-link dropdown-toggle" id="navBarDropdownAttendance" role="button" data-toggle="dropdown" href="#">Attendance</a>
-              <div class="dropdown-menu" aria-labelledby="navBarDropdownAttendance">
-                <a class="dropdown-item" href="./attendance-house.html">House</a>
-                <div class="dropdown-devider"></div>
-                <a class="dropdown-item" href="./attendance-senate.html">Senate</a>
-              </div>
-            </li>
-            <li class="navbar-item dropdown">
-              <a class="nav-link dropdown-toggle" id="navBarDropdownLoyalty" role="button" data-toggle="dropdown" href="#">Party Loyalty</a>
-              <div class="dropdown-menu" aria-labelledby="navBarDropdownLoyalty">
-                <a class="dropdown-item" href="./loyalty-house.html">House</a>
-                <div class="dropdown-devider"></div>
-                <a class="dropdown-item" href="./loyalty-senate.html">Senate</a>
-              </div>
-            </li>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav md-auto">
+          <li class="navbar-item">
+            <a class="nav-link" href="./home.html">Home</a>
+          </li>
+          <li class="navbar-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navBarDropdown" role="button" data-toggle="dropdown"
+              href="#">Congress 113</a>
+            <div class="dropdown-menu" aria-labelledby="navBarDropdown">
+              <a class="dropdown-item" href="./house-data.html">House</a>
+              <div class="dropdown-devider"></div>
+              <a class="dropdown-item" href="./senate-data.html">Senate</a>
+            </div>
+          </li>
+          <li class="navbar-item dropdown active">
+            <a class="text-primary  nav-link dropdown-toggle" id="navBarDropdownAttendance" role="button"
+              data-toggle="dropdown" href="#">Attendance</a>
+            <div class="dropdown-menu" aria-labelledby="navBarDropdownAttendance">
+              <a class="dropdown-item" href="./attendance-house.html">House</a>
+              <div class="dropdown-devider"></div>
+              <a class="dropdown-item" href="./attendance-senate.html">Senate</a>
+            </div>
+          </li>
+          <li class="navbar-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navBarDropdownLoyalty" role="button" data-toggle="dropdown"
+              href="#">Party Loyalty</a>
+            <div class="dropdown-menu" aria-labelledby="navBarDropdownLoyalty">
+              <a class="dropdown-item" href="./loyalty-house.html">House</a>
+              <div class="dropdown-devider"></div>
+              <a class="dropdown-item" href="./loyalty-senate.html">Senate</a>
+            </div>
+          </li>
         </ul>
-    </div>
+      </div>
     </nav>
-      <section class="statistics d-flex flex-wrap">
-        <article class="content col col-6 mt-4" >
-          <h2>Attendance</h2>
-          <p>The Constitution specifies that a majority of members constitutes a quorum to do business in each house. Representatives and senators rarely force the presence of a quorum by demanding quorum calls; thus, in most cases, debates continue even if a majority is not present.</p>
+    <section class="statistics d-flex flex-wrap">
+      <article class="content col col-6 mt-4">
+        <h2>Attendance</h2>
+        <p>
+          The Constitution specifies that a majority of members constitutes a
+          quorum to do business in each house. Representatives and senators
+          rarely force the presence of a quorum by demanding quorum calls;
+          thus, in most cases, debates continue even if a majority is not
+          present.
+        </p>
 
-          <p>The Senate uses roll-call votes; a clerk calls out the names of all the senators, each senator stating "aye" or "no" when his or her name is announced. The House reserves roll-call votes for the most formal matters, as a roll-call of all 435 representatives takes quite some time; normally, members vote by electronic device. In the case of a tie, the motion in question fails. In the Senate, the Vice President may (if present) cast the tiebreaking vote.</p>
-        </article>
+        <p>
+          The Senate uses roll-call votes; a clerk calls out the names of all
+          the senators, each senator stating "aye" or "no" when his or her
+          name is announced. The House reserves roll-call votes for the most
+          formal matters, as a roll-call of all 435 representatives takes
+          quite some time; normally, members vote by electronic device. In the
+          case of a tie, the motion in question fails. In the Senate, the Vice
+          President may (if present) cast the tiebreaking vote.
+        </p>
+      </article>
 
-        <article class="table-glance-senate col col-6 mt-4">
-          <h3>House at a glance</h3>
-          <table id="glance-house" class="table table-hover text-center"></table>
-        </article>
+      <article class="table-glance-senate col col-6 mt-4">
+        <h3>House at a glance</h3>
+        <table id="glance-house" class="table table-hover text-center"></table>
+      </article>
 
-        <article class="-table-least-engaged-house col col-6 mt-4">
-          <h3>Least Engaged (Bottom 10% Attendance)</h3>
-          <table id="least-engaged-house" class="table table-hover text-center"></table>
-        </article>
+      <article class="-table-least-engaged-house col col-6 mt-4">
+        <h3>Least Engaged (Bottom 10% Attendance)</h3>
+        <table id="least-engaged-house" class="table table-hover text-center"></table>
+      </article>
 
-        <article class="table-most-engaged-house col col-6 mt-4">
-          <h3>Most Engaged (Top 10% Attendance)</h3>
-          <table id="most-engaged-house" class="table table-hover text-center"></table>
-        </article>
+      <article class="table-most-engaged-house col col-6 mt-4">
+        <h3>Most Engaged (Top 10% Attendance)</h3>
+        <table id="most-engaged-house" class="table table-hover text-center"></table>
+      </article>
+    </section>
 
-      </section>
-
-        <footer class="card" style="background-color: #f5f5f5">
-          <div class="card-body">
-            <h5 class="card-title">© 2016 TGIF | All Rights Reserved</h5>
-          </div>
-        </footer>
-    </div>
-    <script src="../model/statistics-house.js"></script>
-
+    <footer class="card" style="background-color: #f5f5f5">
+      <div class="card-body">
+        <h5 class="card-title">© 2016 TGIF | All Rights Reserved</h5>
+      </div>
+    </footer>
+  </div>
+  <script src="../model/statistics-house.js"></script>
 </body>
+
 </html>
