@@ -13,9 +13,10 @@
 </head>
 
 <body>
-  <script src="../model/senate-113.js"></script>
 
-  <div class="container">
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+  <div class="container" id="senate-stttcs">
 
     <header class="d-flex justify-content-between align-items-center">
       <div class="logo-sm " style="background-color: #0d2949; width: 110px">
@@ -76,18 +77,62 @@
 
       <article class="table-glance-senate col col-6 mt-4">
         <h3>Senate at a glance</h3>
-        <table id="glance-senate" class="table table-hover text-center"></table>
+        <table id="glance-senate" class="table table-hover text-center text-uppercase">
+          <thead class="thead-dark">
+            <th>Party</th>
+            <th>N° of Reps</th>
+            <th> % Votes with Party</th>
+          </thead>
+          <tbody>
+            <tr v-for="(value, key) in party">
+              <td>{{value.name}}</td>
+              <td>{{value.number}}</td>
+              <td>{{value.votes_with_party}}</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <td>Total</td>
+            <td>{{number_total}}</td>
+            <td>{{avg_votes_with_party}}</td>
+          </tfoot>
+        </table>
       </article>
 
-      <article class="-table-least-engaged-senate col col-6 mt-4">
-        <h3>Least Loyal (Bottom 10% of Party)</h3>
-        <table id="least-loyal-senate" class="table table-hover text-center"></table>
-      </article>
-
-      <article class="table-most-engaged-senate col col-6 mt-4">
-        <h3>Most Loyal (Top 10% of Party)</h3>
-        <table id="most-loyal-senate" class="table table-hover text-center"></table>
-      </article>
+      <article class="table-least-loyalty-senate col col-6 mt-4">
+          <h3>Least Loyalty (Bottom 10% Attendance)</h3>
+          <table id="least-loyal-senate" class="table table-hover text-center">
+              <thead class="thead-dark">
+                  <th>Name</th>
+                  <th>N° Missed Votes</th>
+                  <th>% Missed</th>
+              </thead>
+              <tbody>
+                <tr v-for="(value, key) in least_loyalty">
+                  <td>{{value.first_name}}</td>
+                  <td>{{value.missed_votes}}</td>
+                  <td>{{value.missed_votes_pct}}</td>
+                </tr>
+              </tbody>
+          </table>
+        </article>
+  
+        <article class="table-most-engaged-senate col col-6 mt-4">
+          <h3>Most Loyalty (Top 10% Attendance)</h3>
+          <table id="most-loyal-senate" class="table table-hover text-center">
+            <thead class="thead-dark">
+                <th>Name</th>
+                <th>N° Missed Votes</th>
+                <th>% Missed</th>
+            </thead>
+            <tbody>
+              <tr v-for="(value, key) in most_loyalty">
+                <td>{{value.first_name}}</td>
+                <td>{{value.missed_votes}}</td>
+                <td>{{value.missed_votes_pct}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
 
     </section>
 
@@ -98,7 +143,7 @@
     </footer>
   </div>
 
-
+  <script src="../model/getData.js"></script>
   <script src="../model/statistics-senate.js"></script>
 </body>
 

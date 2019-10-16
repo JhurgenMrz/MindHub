@@ -11,7 +11,7 @@ function FetchData(congress){
     })
     .then( response => response.json())
     .then( data => {
-        console.log(data.results[0].members)
+        // console.log(data.results[0].members)
         return data.results[0].members
     })
     .catch(error => error.message)
