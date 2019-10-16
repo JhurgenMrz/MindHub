@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Senate Data</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../styles/loader.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -72,8 +73,11 @@
         eveniet quas eius non corporis, nemo incidunt est, ea deserunt praesentium, vel dolorem consectetur.</p>
     </div>
 
-
-    <table class="table table-hover text-center">
+    <div v-if="loading" class="d-flex flex-column justify-content-center align-items-center">
+        <h4>Loading...</h4>
+        <div class="loader"></div>
+    </div>
+    <table v-else class="table table-hover text-center">
       <thead>
         <th>Members</th>
         <th>First Name</th>
