@@ -1,15 +1,18 @@
-// Ct3pF5LdEMVRPSUTK7U897agfhACfQlD98q7V3P8
-
-const data = fetch('https://api.propublica.org/congress/v1/113/senate/members.json',{
-    method: 'GET',
-    headers: new Headers({
-        'X-API-Key' : 'Ct3pF5LdEMVRPSUTK7U897agfhACfQlD98q7V3P8'
+function FetchData(congress){
+    api_key ='Ct3pF5LdEMVRPSUTK7U897agfhACfQlD98q7V3P8'
+    
+    url = `https://api.propublica.org/congress/v1/113/${congress}/members.json`
+   
+    return fetch(url,{
+        method: 'GET',
+        headers: new Headers({
+            'X-API-Key' : api_key
+        })
     })
-})
-.then((response)=> response.json())
-.then(data => {
-    return data
-})
-.catch(function(error){
-    console.log(error.message);
-})
+    .then( response => response.json())
+    .then( data => {
+        console.log(data.results[0].members)
+        return data.results[0].members
+    })
+    .catch(error => error.message)
+}

@@ -13,9 +13,9 @@
 </head>
 
 <body>
-  <!-- <script src="../model/senate-113.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
-  <div class="container">
+  <div class="container" id="senate-data">
 
     <header class="d-flex justify-content-between align-items-center">
       <div class="logo-sm " style="background-color: #0d2949; width: 110px">
@@ -73,7 +73,28 @@
     </div>
 
 
-    <table class="table table-hover" id="senate-data">
+    <table class="table table-hover text-center">
+      <thead>
+        <th>Members</th>
+        <th>First Name</th>
+        <th>Middle Name</th>
+        <th>Last Name</th>
+        <th>Party</th>
+        <th>Total Votes</th>
+      </thead>
+      <tbody>
+        <tr v-for="(value, key) in members">
+          <td>#{{key+1}}</td>
+          <td><a v-bind:href="value.url">{{value.first_name}}</a></td>
+          <td>
+            <a v-if="value.middle_name" v-bind:href="value.url">{{value.middle_name}}</a>
+            <a v-else v-bind:href="value.url"> - </a>
+          </td>
+          <td><a v-bind:href="value.url">{{value.last_name}}</a></td>
+          <td>{{value.party}}</td>
+          <td>{{value.total_votes}}</td>
+        </tr>
+      </tbody>
 
     </table>
     <footer class="card" style="background-color: #f5f5f5">
