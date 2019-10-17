@@ -33,7 +33,6 @@ var senate_stttcs = new Vue({
 })
 
 FetchData('senate').then(data => {
-    senate_stttcs.loading = false,
     senate_stttcs.members = data
     
     chargeTotalNumber(senate_stttcs.members, senate_stttcs)
@@ -49,7 +48,7 @@ FetchData('senate').then(data => {
     senate_stttcs.least_engaged = leastEngaged(senate_stttcs.members, 10)
     senate_stttcs.most_engaged = mostEngaged(senate_stttcs.members, 10)
 
-
+    senate_stttcs.loading = false
 })
 
 
@@ -87,6 +86,14 @@ function round(num, decimales = 2) {
     return signo * (num[0] + 'e' + (num[1] ? (+num[1] - decimales) : -decimales));
 }
 
+//Funcion para sacar el porcentaje
+function percentage(total, percent){
+    return round(((percent*total)/100),2)
+}
+function percentage(total, percent,number){
+    return round(((percent*total)/100),number)
+}
+
 //Promedio de Votos con el partido
 function averageTotalVotes (members, number) {
     let totalVotesWP = 0
@@ -96,6 +103,7 @@ function averageTotalVotes (members, number) {
     
     return round((totalVotesWP / number),2)
 }
+
 
 
 // Array de Miembros Menos Leales
@@ -109,16 +117,18 @@ function votesAgainstParty(array, percent){
         }
         return 0
     })
-    let quantityPersons = Math.round((percent*100)/(orderedMembers.length))
+    let quantityPersons = percentage(orderedMembers.length,percent)
     let againstParty = []
     for(let i = 0; i < quantityPersons; i++){
+        orderedMembers[i].votes_with_party = round((((orderedMembers[i].total_votes - orderedMembers[i].missed_votes) * orderedMembers[i].votes_with_party_pct)/100),0)
         againstParty.push(orderedMembers[i])
     }
     return againstParty
 }
 
 
-//Array de Miembros mas leales a su Partido
+
+//Array de Miembros Máss leales a su Partido
 function votesWithParty(array, percent){
     let orderedMembers = array.sort(function(a,b){
         if(a.votes_with_party_pct < b.votes_with_party_pct){
@@ -129,9 +139,10 @@ function votesWithParty(array, percent){
         }
         return 0
     })
-    let quantityPersons = Math.round((percent*100)/(orderedMembers.length))
+    let quantityPersons = percentage(orderedMembers.length,percent)
     let withParty = []
     for(let i = 0; i < quantityPersons; i++){
+        orderedMembers[i].votes_with_party = percentage((orderedMembers[i].total_votes-orderedMembers[i].missed_votes),orderedMembers[i].votes_with_party_pct,0)
         withParty.push(orderedMembers[i])
     }
     return withParty
@@ -148,7 +159,7 @@ function leastEngaged(array, percent){
         }
         return 0
     })
-    let quantityPersons = Math.round((percent * orderedMembers.length) / 100 )
+    let quantityPersons = percentage(orderedMembers.length,percent)
     let moreAbsent = []
     for(let i = 0; i < quantityPersons; i++){
         moreAbsent.push(orderedMembers[i])
@@ -167,229 +178,10 @@ function mostEngaged(array, percent){
         }
         return 0
     })
-    let quantityPersons = Math.round((percent * orderedMembers.length) / 100 )
+    let quantityPersons = percentage(orderedMembers.length,percent)
     let lessAbsent = []
     for(let i = 0; i < quantityPersons; i++){
         lessAbsent.push(orderedMembers[i])
     }
     return lessAbsent
 }
-
-
-//////////////////////////////////
-//     RENDER DE LAS TABLAS     //
-//////////////////////////////////
-
-
-// //Table Senate
-// const attendanceSenate = document.getElementById('glance-senate')
-
-// //render de fila del senado
-// function renderRowSenate(statistics){
-//     const arrayOfPartys = []
-//     const rows = []
-//     for(let i in statistics.party){
-//         arrayOfPartys.push([statistics.party[i]])
-//     }
-//     rows.push(arrayOfPartys.map((el)=>(`<tr>
-//         <td>${el[0].name}</td>
-//         <td>${el[0].number}</td>
-//         <td>${el[0].votes_with_party}</td>
-//         </tr>
-//         `
-//     )).join(''))
-//     return rows
-    
-// }
-// //Render de la Tabla del Senado
-// function renderTableAttendanceSenate(statistics){
-//     const header = `<thead class="thead-dark">
-//             <th>Party</th>
-//             <th>N° of Reps</th>
-//             <th> % Votes with Party</th>
-//         </thead>
-//     `
-//     const Table = `${header}
-//         <tbody class="text-uppercase">
-//             ${renderRowSenate(statistics)}
-//         </tbody>
-//         <tfoot class="text-uppercase">
-//             <td>Total</td>
-//             <td>${statistics.number_total}</td>
-//             <td>${statistics.total_votes_with_party}</td>
-//         </tfoot>
-//     `
-//     return Table
-// }
-
-// attendanceSenate.innerHTML = renderTableAttendanceSenate(statistics)
-
-
-
-// //Render Table Least Engaged
-// //table
-// if(document.getElementById('least-engaged-senate')){
-//     const tableLeastEngagedSenate = document.getElementById('least-engaged-senate')
-    
-//     function renderRowLeastEngaged(statistics){
-    
-//         let rows = []
-    
-//         rows.push(statistics.least_engaged.map((el)=>{
-//             return (`<tr>
-//                     <td>${el.first_name}</td>
-//                     <td>${el.missed_votes}</td>
-//                     <td>${el.missed_votes_pct}</td>
-//                 </tr>
-//                 `
-//             )
-//         }).join(''))
-    
-//         return rows;
-//     }
-    
-//     function renderTableLeastEngaged(statistics){
-        // const header = `<thead class="thead-dark">
-        //         <th>Name</th>
-        //         <th>N° Missed Votes</th>
-        //         <th>% Missed</th>
-        //     </thead>
-//         `
-//         const table = `${header}
-//             <tbody>
-//                 ${renderRowLeastEngaged(statistics)}
-//             </tbody>
-    
-//         `
-    
-//         return table
-//     }
-    
-//     tableLeastEngagedSenate.innerHTML = renderTableLeastEngaged(statistics)
-    
-    
-//     //Most Engaged
-//         //table
-//     const tableMostEngagedSenate = document.getElementById('most-engaged-senate')
-    
-//     function renderRowMostEngaged(statistics){
-//         let rows = []
-//         rows.push(statistics.most_engaged.map((el)=>{
-//             return (`<tr>
-//                     <td>${el.first_name}</td>
-//                     <td>${el.missed_votes}</td>
-//                     <td>${el.missed_votes_pct}</td>
-//                 </tr>
-//                 `
-//             )
-//         }).join(''))
-    
-//         return rows;
-//     }
-    
-//     function renderTableMostEngaged (statistics){
-        
-//         const header = `<thead class="thead-dark">
-//                 <th>Name</th>
-//                 <th>N° Missed Votes</th>
-//                 <th>% Missed</th>
-//             </thead>
-//         `
-//         const table = `${header}
-//             <tbody>
-//                 ${renderRowMostEngaged(statistics)}
-//             </tbody>
-    
-//         `
-    
-//         return table
-//     }
-    
-//     tableMostEngagedSenate.innerHTML = renderTableMostEngaged(statistics)
-    
-// }
-
-
-// //Party Loyalty
-
-// if(document.getElementById('least-loyal-senate') && document.getElementById('most-loyal-senate')){
-    
-//     //Table Least Loyal
-//     const tableLeastLoyalSenate =  document.getElementById('least-loyal-senate')
-    
-//     function renderRowLeastLoyal(statistics){
-    
-//         let rows = []
-    
-//         rows.push(statistics.least_loyalty.map((el)=>{
-//             return (`<tr>
-//                     <td>${el.first_name}</td>
-//                     <td>${el.missed_votes}</td>
-//                     <td>${el.missed_votes_pct}</td>
-//                 </tr>
-//                 `
-//             )
-//         }).join(''))
-    
-//         return rows;
-//     }
-    
-//     function renderTableLeastLoyal(statistics){
-//         const header = `<thead class="thead-dark">
-//                 <th>Name</th>
-//                 <th>N° Missed Votes</th>
-//                 <th>% Missed</th>
-//             </thead>
-//         `
-//         const table = `${header}
-//             <tbody>
-//                 ${renderRowLeastLoyal(statistics)}
-//             </tbody>
-    
-//         `
-    
-//         return table
-//     }
-    
-//     tableLeastLoyalSenate.innerHTML = renderTableLeastLoyal(statistics)
-
-
-//     const tableMostLoyalSenate = document.getElementById('most-loyal-senate')
-
-//     function renderRowMostLoyal(statistics){
-    
-//         let rows = []
-    
-//         rows.push(statistics.most_loyalty.map((el)=>{
-//             return (`<tr>
-//                     <td>${el.first_name}</td>
-//                     <td>${el.missed_votes}</td>
-//                     <td>${el.missed_votes_pct}</td>
-//                 </tr>
-//                 `
-//             )
-//         }).join(''))
-    
-//         return rows;
-//     }
-    
-//     function renderTableMostLoyal(statistics){
-//         const header = `<thead class="thead-dark">
-//                 <th>Name</th>
-//                 <th>N° Missed Votes</th>
-//                 <th>% Missed</th>
-//             </thead>
-//         `
-//         const table = `${header}
-//             <tbody>
-//                 ${renderRowMostLoyal(statistics)}
-//             </tbody>
-    
-//         `
-    
-//         return table
-//     }
-
-//     tableMostLoyalSenate.innerHTML = renderTableMostLoyal(statistics)
-// }   
-

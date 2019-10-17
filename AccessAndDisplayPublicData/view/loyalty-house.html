@@ -5,15 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Senate Data</title>
+  <title>Congress</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../styles/loader.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-  <script src="../model/congress-113.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
   <div class="container" id="house-stttcs">
 
@@ -75,17 +76,73 @@
 
       <article class="table-glance-senate col col-6 mt-4">
         <h3>House at a glance</h3>
-        <table id="glance-house" class="table table-hover text-center"></table>
+        <div v-if="loading" class="d-flex flex-column justify-content-center align-items-center">
+            <h4>Loading...</h4>
+            <div class="loader"></div>
+        </div>
+        <table v-else class="table table-hover text-center text-uppercase">
+          <thead class="thead-dark">
+            <th>Party</th>
+            <th>N° of Reps</th>
+            <th> % Votes with Party</th>
+          </thead>
+          <tbody >
+            <tr v-for="(value, key) in party">
+              <td>{{value.name}}</td>
+              <td>{{value.number}}</td>
+              <td>{{value.votes_with_party}}</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <td>Total</td>
+            <td>{{number_total}}</td>
+            <td>{{avg_votes_with_party}}</td>
+          </tfoot>
+        </table>
       </article>
 
       <article class="-table-least-engaged-senate col col-6 mt-4">
         <h3>Least Loyal (Bottom 10% of Party)</h3>
-        <table id="least-loyal-house" class="table table-hover text-center"></table>
+        <div v-if="loading" class="d-flex flex-column justify-content-center align-items-center">
+            <h4>Loading...</h4>
+            <div class="loader"></div>
+        </div>
+        <table v-else class="table table-hover text-center">
+            <thead class="thead-dark">
+                <th>Name</th>
+                <th>N° Party Votes</th>
+                <th>% Party Votes</th>
+            </thead>
+            <tbody>
+              <tr v-for="(value, key) in least_loyalty">
+                <td>{{value.first_name}}</td>
+                <td>{{value.missed_votes}}</td>
+                <td>{{value.missed_votes_pct}}</td>
+              </tr>
+            </tbody>
+        </table>
       </article>
 
       <article class="table-most-engaged-senate col col-6 mt-4">
         <h3>Most Loyal (Top 10% of Party)</h3>
-        <table id="most-loyal-house" class="table table-hover text-center"></table>
+        <div v-if="loading" class="d-flex flex-column justify-content-center align-items-center">
+            <h4>Loading...</h4>
+            <div class="loader"></div>
+        </div>
+        <table v-else class="table table-hover text-center">
+          <thead class="thead-dark">
+              <th>Name</th>
+              <th>N° Party Votes</th>
+              <th>% Party Votes</th>
+          </thead>
+          <tbody>
+            <tr v-for="(value, key) in most_loyalty">
+              <td>{{value.first_name}}</td>
+              <td>{{value.missed_votes}}</td>
+              <td>{{value.missed_votes_pct}}</td>
+            </tr>
+          </tbody>
+          </table>
       </article>
 
     </section>
@@ -97,6 +154,7 @@
       </div>
     </footer>
   </div>
+  <script src="../model/getData.js"></script>
   <script src="../model/statistics-house.js"></script>
 
 </body>
