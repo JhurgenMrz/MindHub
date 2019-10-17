@@ -79,8 +79,8 @@
       <article class="table-glance-senate col col-6 mt-4">
         <h3>Senate at a glance</h3>
         <div v-if="loading" class="d-flex flex-column justify-content-center align-items-center">
-            <h4>Loading...</h4>
-            <div class="loader"></div>
+          <h4>Loading...</h4>
+          <div class="loader"></div>
         </div>
         <table v-else id="glance-senate" class="table table-hover text-center text-uppercase">
           <thead class="thead-dark">
@@ -104,48 +104,48 @@
       </article>
 
       <article class="table-least-loyalty-senate col col-6 mt-4">
-          <h3>Least Loyalty (Bottom 10% Attendance)</h3>
-          <div v-if="loading" class="d-flex flex-column justify-content-center align-items-center">
-              <h4>Loading...</h4>
-              <div class="loader"></div>
-          </div>
-          <table v-else id="least-loyal-senate" class="table table-hover text-center">
-              <thead class="thead-dark">
-                  <th>Name</th>
-                  <th>N° Party Votes</th>
-                  <th>% Party Votes</th>
-              </thead>
-              <tbody>
-                <tr v-for="(value, key) in least_loyalty">
-                  <td>{{value.first_name}}</td>
-                  <td>{{value.votes_with_party}}</td>
-                  <td>{{value.votes_with_party_pct}}</td>
-                </tr>
-              </tbody>
-          </table>
-        </article>
-  
-        <article class="table-most-engaged-senate col col-6 mt-4">
-          <h3>Most Loyalty (Top 10% Attendance)</h3>
-          <div v-if="loading" class="d-flex flex-column justify-content-center align-items-center">
-              <h4>Loading...</h4>
-              <div class="loader"></div>
-          </div>
-          <table v-else id="most-loyal-senate" class="table table-hover text-center">
-            <thead class="thead-dark">
-                <th>Name</th>
-                <th>N° Party Votes</th>
-                <th>% Party Votes</th>
-            </thead>
-            <tbody>
-              <tr v-for="(value, key) in most_loyalty">
-                <td>{{value.first_name}}</td>
-                <td>{{value.votes_with_party}}</td>
-                <td>{{value.votes_with_party_pct}}</td>
-              </tr>
-            </tbody>
-          </table>
-        </article>
+        <h3>Least Loyalty (Bottom 10% Attendance)</h3>
+        <div v-if="loading" class="d-flex flex-column justify-content-center align-items-center">
+          <h4>Loading...</h4>
+          <div class="loader"></div>
+        </div>
+        <table v-else id="least-loyal-senate" class="table table-hover text-center">
+          <thead class="thead-dark">
+            <th>Name</th>
+            <th>N° Party Votes</th>
+            <th>% Party Votes</th>
+          </thead>
+          <tbody>
+            <tr v-for="(value, key) in least_loyalty">
+              <td>{{value.first_name}}</td>
+              <td>{{value.votes_with_party}}</td>
+              <td>{{value.votes_with_party_pct}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="table-most-engaged-senate col col-6 mt-4">
+        <h3>Most Loyalty (Top 10% Attendance)</h3>
+        <div v-if="loading" class="d-flex flex-column justify-content-center align-items-center">
+          <h4>Loading...</h4>
+          <div class="loader"></div>
+        </div>
+        <table v-else id="most-loyal-senate" class="table table-hover text-center">
+          <thead class="thead-dark">
+            <th>Name</th>
+            <th>N° Party Votes</th>
+            <th>% Party Votes</th>
+          </thead>
+          <tbody>
+            <tr v-for="(value, key) in most_loyalty">
+              <td>{{value.first_name}}</td>
+              <td>{{value.votes_with_party}}</td>
+              <td>{{value.votes_with_party_pct}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
 
     </section>
 

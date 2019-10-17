@@ -7,6 +7,6 @@ var house_data = new Vue({
 })
 
 FetchData('house').then(data => {
-    house_data.loading = false
     house_data.members = data
+    house_data.loading = false
 })

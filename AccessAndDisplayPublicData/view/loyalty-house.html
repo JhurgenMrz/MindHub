@@ -116,8 +116,8 @@
             <tbody>
               <tr v-for="(value, key) in least_loyalty">
                 <td>{{value.first_name}}</td>
-                <td>{{value.missed_votes}}</td>
-                <td>{{value.missed_votes_pct}}</td>
+                <td>{{value.votes_with_party}}</td>
+                <td>{{value.votes_with_party_pct}}</td>
               </tr>
             </tbody>
         </table>
@@ -138,8 +138,8 @@
           <tbody>
             <tr v-for="(value, key) in most_loyalty">
               <td>{{value.first_name}}</td>
-              <td>{{value.missed_votes}}</td>
-              <td>{{value.missed_votes_pct}}</td>
+              <td>{{value.votes_with_party}}</td>
+              <td>{{value.votes_with_party_pct}}</td>
             </tr>
           </tbody>
           </table>

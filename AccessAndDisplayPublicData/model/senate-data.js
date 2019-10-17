@@ -7,7 +7,7 @@ var senate_data = new Vue({
 })
 
 FetchData('senate').then( data =>{
-    senate_data.loading =  false
     senate_data.members = data
+    senate_data.loading =  false
 })
 .catch(error => error)
